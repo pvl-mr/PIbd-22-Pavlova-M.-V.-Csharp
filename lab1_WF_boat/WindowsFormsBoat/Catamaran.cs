@@ -51,7 +51,6 @@ namespace WindowsFormsBoat
         /// <summary>
         public bool LeftSideFloat { private set; get; }
         public bool RighrSideFloat { private set; get; }
-
         /// Признак наличия полосы
         /// </summary>
         public bool Line { private set; get; }
@@ -73,7 +72,6 @@ namespace WindowsFormsBoat
             _pictureHeight = height;
             _startPosX = x;
             _startPosY = y;
-           
         }
 
         public void MoveTransport(Direction direction)
@@ -114,15 +112,7 @@ namespace WindowsFormsBoat
 
         public void DrawTransport(Graphics g)
         {
-            Pen pen = new Pen(Color.Black);
-
-            // отрисуем сперва передний спойлер автомобиля (чтобы потом отрисовка автомобиля на него "легла")
-            // и боковые
-
-            // g.DrawRectangle(pen, _startPosX + 25, _startPosY - 6, 39, 10);
-          
-
-           
+            Pen pen = new Pen(Color.Black);    
             PointF[] curvePoints =
                      {
             new PointF(_startPosX, _startPosY+50),
@@ -132,16 +122,11 @@ namespace WindowsFormsBoat
             new PointF(_startPosX + 250, _startPosY + 120),
             new PointF(_startPosX + 160, _startPosY + 120),
             new PointF(_startPosX, _startPosY+90),
-          //  new PointF(300.0F, 100.0F),
-          //  new PointF(350.0F, 200.0F)
-        };
-
-            // Draw polygon curve to screen.
-           
+        };        
             g.FillPolygon(new SolidBrush(Color.Aqua), curvePoints);
-        g.DrawLine(pen, _startPosX + 160, _startPosY + 20, _startPosX + 160, _startPosY + 120);
-        g.DrawLine(pen, _startPosX + 180, _startPosY + 20, _startPosX + 180, _startPosY + 120);
-        g.DrawLine(pen, _startPosX + 300, _startPosY + 40, _startPosX + 300, _startPosY + 104);
+	    g.DrawLine(pen, _startPosX + 160, _startPosY + 20, _startPosX + 160, _startPosY + 120);
+            g.DrawLine(pen, _startPosX + 180, _startPosY + 20, _startPosX + 180, _startPosY + 120);
+	    g.DrawLine(pen, _startPosX + 300, _startPosY + 40, _startPosX + 300, _startPosY + 104);
             if (SideSpoiler)
             {
                 Brush spoiler = new SolidBrush(DopColor);
@@ -162,8 +147,5 @@ namespace WindowsFormsBoat
             }
 
         }
-
-
-
     }
 }
