@@ -33,8 +33,7 @@ namespace WindowsFormsBoat
 		{
 			Random rnd = new Random();
 			boat = new Catamaran(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Aqua, Color.Gray, true, true);
-			boat.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxBoat.Width,
-pictureBoxBoat.Height);
+			boat.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxBoat.Width, pictureBoxBoat.Height);
 			Draw();
 		}
 
@@ -59,7 +58,5 @@ pictureBoxBoat.Height);
 			}
 			Draw();
 		}
-
-		
 	}
 }
