@@ -65,7 +65,6 @@ namespace WindowsFormsBoat
 					}
 					break;
 				//вверх
-				//вверх
 				case Direction.Up:
 					if (_startPosY - step > 0)
 					{
