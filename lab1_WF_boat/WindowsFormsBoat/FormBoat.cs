@@ -13,7 +13,7 @@ namespace WindowsFormsBoat
 	public partial class FormBoat : Form
 	{
 
-		private Catamaran boat;
+		private ITransport boat;
 
 		public FormBoat()
 		{
@@ -32,10 +32,13 @@ namespace WindowsFormsBoat
 		private void buttonCreate_Click(object sender, EventArgs e)
 		{
 			Random rnd = new Random();
-			boat = new Catamaran(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Aqua, Color.Gray, true, true);
-			boat.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxBoat.Width, pictureBoxBoat.Height);
+			boat = new Boat(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Aqua);
+			boat.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxBoat.Width,
+pictureBoxBoat.Height);
 			Draw();
 		}
+
+		
 
 		private void buttonMove_Click(object sender, EventArgs e)
 		{
@@ -56,6 +59,15 @@ namespace WindowsFormsBoat
 					boat.MoveTransport(Direction.Right);
 					break;
 			}
+			Draw();
+		}
+
+		private void buttonCreateCatamaran_Click(object sender, EventArgs e)
+		{
+			Random rnd = new Random();
+			boat = new Catamaran(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Aqua, Color.Gray, true, true);
+			boat.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxBoat.Width,
+pictureBoxBoat.Height);
 			Draw();
 		}
 	}
