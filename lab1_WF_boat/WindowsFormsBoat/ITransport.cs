@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsBoat
 {
-	interface ITransport
+	public interface ITransport
 	{
 		/// <summary>
 		/// Установка позиции
@@ -27,6 +27,5 @@ namespace WindowsFormsBoat
 		/// </summary>
 		/// <param name="g"></param>
 		void DrawTransport(Graphics g);
-
 	}
 }
