@@ -65,6 +65,7 @@ namespace WindowsFormsBoat
 					}
 					break;
 				//вверх
+				//вверх
 				case Direction.Up:
 					if (_startPosY - step > 0)
 					{
@@ -83,7 +84,6 @@ namespace WindowsFormsBoat
 		public override void DrawTransport(Graphics g)
 		{
 			Pen pen = new Pen(Color.Black);
-
 			PointF[] curvePoints =
 					 {
 			new PointF(_startPosX, _startPosY+50),
@@ -95,8 +95,7 @@ namespace WindowsFormsBoat
 			new PointF(_startPosX, _startPosY+90),
 
 			 };
-
-			g.FillPolygon(new SolidBrush(Color.Aqua), curvePoints);
+			g.FillPolygon(new SolidBrush(MainColor), curvePoints);
 			g.DrawLine(pen, _startPosX + 160, _startPosY + 20, _startPosX + 160, _startPosY + 120);
 			g.DrawLine(pen, _startPosX + 180, _startPosY + 20, _startPosX + 180, _startPosY + 120);
 			g.DrawLine(pen, _startPosX + 300, _startPosY + 40, _startPosX + 300, _startPosY + 104);

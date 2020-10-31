@@ -20,6 +20,13 @@ namespace WindowsFormsBoat
 			InitializeComponent();
 		}
 
+		public void SetBoat(ITransport boat)
+		{
+			this.boat = boat;
+			Draw();
+
+		}
+
 		private void Draw()
 		{
 			Bitmap bmp = new Bitmap(pictureBoxBoat.Width, pictureBoxBoat.Height);
@@ -38,7 +45,6 @@ pictureBoxBoat.Height);
 			Draw();
 		}
 
-		
 
 		private void buttonMove_Click(object sender, EventArgs e)
 		{
@@ -47,16 +53,16 @@ pictureBoxBoat.Height);
 			switch (name)
 			{
 				case "buttonUp":
-					boat.MoveTransport(Direction.Up);
+					boat?.MoveTransport(Direction.Up);
 					break;
 				case "buttonDown":
-					boat.MoveTransport(Direction.Down);
+					boat?.MoveTransport(Direction.Down);
 					break;
 				case "buttonLeft":
-					boat.MoveTransport(Direction.Left);
+					boat?.MoveTransport(Direction.Left);
 					break;
 				case "buttonRight":
-					boat.MoveTransport(Direction.Right);
+					boat?.MoveTransport(Direction.Right);
 					break;
 			}
 			Draw();

@@ -9,10 +9,10 @@ namespace WindowsFormsBoat
 {
 	public class Catamaran : Boat
 	{
-        
         public Color DopColor { private set; get; }
         /// Признак наличия боковых поплавков
-        public bool SideFloat { private set; get; }
+        /// 
+        public bool SideFloat { private set; get; } 
         public bool LeftSideFloat { private set; get; }
         public bool RighrSideFloat { private set; get; }
 
@@ -48,9 +48,9 @@ namespace WindowsFormsBoat
                 Brush spoiler = new SolidBrush(DopColor);
                 g.FillRectangle(spoiler, _startPosX, _startPosY + 122, 400, 20);
             }
-
             // основная часть плавательного средства
             base.DrawTransport(g);
+
         }
 
     }
