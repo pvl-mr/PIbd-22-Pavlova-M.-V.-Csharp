@@ -108,12 +108,6 @@ namespace WindowsFormsBoat
 				Draw();
 			}
 		}
-
-		private void FormParking_Load(object sender, EventArgs e)
-		{
-
-		}
-
 		
 
 		private void buttonDelParking_Click_Click(object sender, EventArgs e)
