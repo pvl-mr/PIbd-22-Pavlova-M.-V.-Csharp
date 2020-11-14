@@ -45,6 +45,7 @@ pictureBoxBoat.Height);
 			Draw();
 		}
 
+		
 
 		private void buttonMove_Click(object sender, EventArgs e)
 		{
