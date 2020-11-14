@@ -12,7 +12,6 @@ namespace WindowsFormsBoat
 		/// Словарь (хранилище) с парковками
 		/// </summary>
 		readonly Dictionary<string, Parking<SwimmingTransport>> parkingStages;
-
 		/// <summary>
 		/// Возвращение списка названий праковок
 		/// </summary>
@@ -68,11 +67,6 @@ namespace WindowsFormsBoat
 		/// </summary>
 		/// <param name="ind"></param>
 		/// <returns></returns>
-		/// 
-
-		
-
-
 		public Parking<SwimmingTransport> this[string ind]
 		{
 			get
