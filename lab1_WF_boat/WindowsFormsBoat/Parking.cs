@@ -58,7 +58,6 @@ namespace WindowsFormsBoat
 			}
 			p.places.Add(boat);
 			return true;
-			
 		}
 		/// <summary>
 		/// Перегрузка оператора вычитания
@@ -83,7 +82,6 @@ namespace WindowsFormsBoat
 		/// <param name="g"></param>
 		public void Draw(Graphics g)
 		{
-
 			DrawMarking(g);
 			for (int i = 0; i < places.Count; ++i)
 			{
@@ -98,9 +96,8 @@ namespace WindowsFormsBoat
 		private void DrawMarking(Graphics g)
 		{
 			Pen pen = new Pen(Color.Black, 3);
-			for (int i = 0; i < pictureWidth / placeSizeWidth; i++)
-				
-		{
+			for (int i = 0; i < pictureWidth / placeSizeWidth; i++) 
+			{
 				for (int j = 0; j < pictureHeight / placeSizeHeight + 1; ++j)
 				{//линия рамзетки места
 					g.DrawLine(pen, i * placeSizeWidth, j * placeSizeHeight, i * placeSizeWidth + placeSizeWidth / 2, j * placeSizeHeight);
@@ -109,7 +106,6 @@ namespace WindowsFormsBoat
 			}
 		}
 	}
-
 
 
 }
