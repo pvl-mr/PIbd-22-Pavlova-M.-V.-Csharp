@@ -126,13 +126,12 @@ namespace WindowsFormsBoat
 
 		private void buttonAddParking_Click_Click(object sender, EventArgs e)
 		{
-
 			if (string.IsNullOrEmpty(textBoxNewLevelName.Text))
 			{
 				MessageBox.Show("Введите название парковки", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
-parkingCollection.AddParking(textBoxNewLevelName.Text);
+			parkingCollection.AddParking(textBoxNewLevelName.Text);
 			ReloadLevels();
 		}
 
