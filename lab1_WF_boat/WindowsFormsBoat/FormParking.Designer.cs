@@ -177,7 +177,6 @@
 			this.Controls.Add(this.boxParking);
 			this.Name = "FormParking";
 			this.Text = "FormParking";
-			this.Load += new System.EventHandler(this.FormParking_Load);
 			((System.ComponentModel.ISupportInitialize)(this.boxParking)).EndInit();
 			this.groupBox_taking.ResumeLayout(false);
 			this.groupBox_taking.PerformLayout();
