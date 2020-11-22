@@ -10,7 +10,8 @@ namespace WindowsFormsBoat
 {
 	public class Parking<T> where T : class, ITransport
 	{
-		private readonly T[] places;
+		private readonly List<T> places;
+		private readonly int maxCount;
 		/// <summary>
 		/// Ширина окна отрисовки
 		/// </summary>
@@ -36,9 +37,11 @@ namespace WindowsFormsBoat
 		{
 			int width = picWidth / placeSizeWidth;
 			int height = picHeight / placeSizeHeight;
-			places = new T[width * height];
+			places = new List<T>();
 			pictureWidth = picWidth;
 			pictureHeight = picHeight;
+			maxCount = width * height;
+
 		}
 		/// <summary>
 		/// Перегрузка оператора сложения
@@ -49,20 +52,12 @@ namespace WindowsFormsBoat
 		/// <returns></returns>
 		public static bool operator +(Parking<T> p, T boat)
 		{
-			int numberOfstring= p.pictureHeight / placeSizeHeight;
-
-			for (int i = 0; i < p.places.Length; i++)
+			if (p.places.Count >= p.maxCount)
 			{
-				if (p.places[i] == null)
-				{
-					MessageBox.Show(i.ToString());
-					boat.SetPosition((i / numberOfstring) *placeSizeWidth+10, (i % numberOfstring)*placeSizeHeight+15, p.pictureWidth, p.pictureHeight);
-					p.places[i] = boat;
-					return true;
-				}
+				return false;
 			}
-			return false;
-			
+			p.places.Add(boat);
+			return true;
 		}
 		/// <summary>
 		/// Перегрузка оператора вычитания
@@ -73,15 +68,13 @@ namespace WindowsFormsBoat
 		/// <returns></returns>
 		public static T operator -(Parking<T> p, int index)
 		{
-			if (index >= p.places.Length)
+			if (index < -1 || index > p.places.Count)
 			{
 				return null;
 			}
-			T pl = p.places[index];
-			pl.SetPosition(10, 10, p.pictureWidth, p.pictureHeight);
-			p.places[index] = null;
-			// Прописать логику для вычитания
-			return pl;
+			T car = p.places[index];
+			p.places.RemoveAt(index);
+			return car;
 		}
 		/// <summary>
 		/// Метод отрисовки парковки
@@ -90,9 +83,10 @@ namespace WindowsFormsBoat
 		public void Draw(Graphics g)
 		{
 			DrawMarking(g);
-			for (int i = 0; i < places.Length; i++)
+			for (int i = 0; i < places.Count; ++i)
 			{
-				places[i]?.DrawTransport(g);
+				places[i].SetPosition(5 + i / 5 * placeSizeWidth + 5, i % 5 * placeSizeHeight + 15, pictureWidth, pictureHeight);
+				places[i].DrawTransport(g);
 			}
 		}
 		/// <summary>
@@ -102,9 +96,8 @@ namespace WindowsFormsBoat
 		private void DrawMarking(Graphics g)
 		{
 			Pen pen = new Pen(Color.Black, 3);
-			for (int i = 0; i < pictureWidth / placeSizeWidth; i++)
-				
-		{
+			for (int i = 0; i < pictureWidth / placeSizeWidth; i++) 
+			{
 				for (int j = 0; j < pictureHeight / placeSizeHeight + 1; ++j)
 				{//линия рамзетки места
 					g.DrawLine(pen, i * placeSizeWidth, j * placeSizeHeight, i * placeSizeWidth + placeSizeWidth / 2, j * placeSizeHeight);
@@ -113,7 +106,6 @@ namespace WindowsFormsBoat
 			}
 		}
 	}
-
 
 
 }
