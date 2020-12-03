@@ -29,25 +29,25 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBoat));
-			this.buttonCreate = new System.Windows.Forms.Button();
+			this.buttonCreateBoat = new System.Windows.Forms.Button();
 			this.buttonLeft = new System.Windows.Forms.Button();
 			this.buttonDown = new System.Windows.Forms.Button();
 			this.buttonRight = new System.Windows.Forms.Button();
 			this.buttonUp = new System.Windows.Forms.Button();
 			this.pictureBoxBoat = new System.Windows.Forms.PictureBox();
-			this.button1 = new System.Windows.Forms.Button();
+			this.buttonCreateCatamaran = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxBoat)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// buttonCreate
 			// 
-			this.buttonCreate.Location = new System.Drawing.Point(904, 12);
-			this.buttonCreate.Name = "buttonCreate";
-			this.buttonCreate.Size = new System.Drawing.Size(215, 91);
-			this.buttonCreate.TabIndex = 5;
-			this.buttonCreate.Text = "Create boat";
-			this.buttonCreate.UseVisualStyleBackColor = true;
-			this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
+			this.buttonCreateBoat.Location = new System.Drawing.Point(904, 12);
+			this.buttonCreateBoat.Name = "buttonCreate";
+			this.buttonCreateBoat.Size = new System.Drawing.Size(215, 91);
+			this.buttonCreateBoat.TabIndex = 5;
+			this.buttonCreateBoat.Text = "Create boat";
+			this.buttonCreateBoat.UseVisualStyleBackColor = true;
+			this.buttonCreateBoat.Click += new System.EventHandler(this.buttonCreate_Click);
 			// 
 			// buttonLeft
 			// 
@@ -106,15 +106,15 @@
 			this.pictureBoxBoat.TabIndex = 4;
 			this.pictureBoxBoat.TabStop = false;
 			// 
-			// button1
+			// buttonCreateCatamaran
 			// 
-			this.button1.Location = new System.Drawing.Point(904, 119);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(214, 103);
-			this.button1.TabIndex = 10;
-			this.button1.Text = "Create catamaran";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.buttonCreateCatamaran_Click);
+			this.buttonCreateCatamaran.Location = new System.Drawing.Point(904, 119);
+			this.buttonCreateCatamaran.Name = "button1";
+			this.buttonCreateCatamaran.Size = new System.Drawing.Size(214, 103);
+			this.bubuttonCreateCatamarantton1.TabIndex = 10;
+			this.buttonCreateCatamaran.Text = "Create catamaran";
+			this.buttonCreateCatamaran.UseVisualStyleBackColor = true;
+			this.buttonCreateCatamaran.Click += new System.EventHandler(this.buttonCreateCatamaran_Click);
 			// 
 			// FormBoat
 			// 
@@ -137,13 +137,13 @@
 		}
 
 		#endregion
-		private System.Windows.Forms.Button buttonCreate;
+		private System.Windows.Forms.Button buttonCreateBoat;
 		private System.Windows.Forms.Button buttonLeft;
 		private System.Windows.Forms.Button buttonDown;
 		private System.Windows.Forms.Button buttonRight;
 		private System.Windows.Forms.Button buttonUp;
 		private System.Windows.Forms.PictureBox pictureBoxBoat;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button buttonCreateCatamaran;
 	}
 }
 
