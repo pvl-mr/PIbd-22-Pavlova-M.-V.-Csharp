@@ -17,27 +17,45 @@ namespace WindowsFormsBoat
 		/// Высота отрисовки лодки
 		/// </summary>
 		protected readonly int boatHeight = 150;
-		/// <summary>
-		/// Конструктор
-		/// </summary>
-		/// <param name="maxSpeed">Максимальная скорость</param>
-		/// <param name="weight">Вес лодки</param>
-		/// <param name="mainColor">Основной цвет плавательного средства</param>
-		public Boat(int maxSpeed, float weight, Color mainColor)
+
+        /// <summary>
+        /// Разделитель для записи информации по объекту в файл
+        /// </summary>
+        protected readonly char separator = ';';
+
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="maxSpeed">Максимальная скорость</param>
+        /// <param name="weight">Вес лодки</param>
+        /// <param name="mainColor">Основной цвет плавательного средства</param>
+        public Boat(int maxSpeed, float weight, Color mainColor)
 		{
 			MaxSpeed = maxSpeed;
 			Weight = weight;
 			MainColor = mainColor;
 		}
-		/// <summary>
-		/// Конструкторс изменением размеров лодки
-		/// </summary>
-		/// <param name="maxSpeed">Максимальная скорость</param>
-		/// <param name="weight">Вес лодки</param>
-		/// <param name="mainColor">Основной цвет плавательного средства</param>
-		/// <param name="carWidth">Ширина отрисовки лодки</param>
-		/// <param name="carHeight">Высота отрисовки лодки</param>
-		protected Boat(int maxSpeed, float weight, Color mainColor, int carWidth, int carHeight)
+        /// <summary>
+        /// Конструкторс изменением размеров лодки
+        /// </summary>
+        /// <param name="maxSpeed">Максимальная скорость</param>
+        /// <param name="weight">Вес лодки</param>
+        /// <param name="mainColor">Основной цвет плавательного средства</param>
+        /// <param name="carWidth">Ширина отрисовки лодки</param>
+        /// <param name="carHeight">Высота отрисовки лодки</param>
+        /// 
+        public Boat(string info)
+        {
+            string[] strs = info.Split(separator);
+            if (strs.Length == 3)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+            }
+        }
+
+        protected Boat(int maxSpeed, float weight, Color mainColor, int carWidth, int carHeight)
 		{
 			MaxSpeed = maxSpeed;
 			Weight = weight;
@@ -64,7 +82,6 @@ namespace WindowsFormsBoat
 						_startPosX -= step;
 					}
 					break;
-				//вверх
 				//вверх
 				case Direction.Up:
 					if (_startPosY - step > 0)
@@ -102,6 +119,12 @@ namespace WindowsFormsBoat
 			g.DrawLine(pen, _startPosX + 180, _startPosY + 20, _startPosX + 180, _startPosY + 120);
 			g.DrawLine(pen, _startPosX + 300, _startPosY + 40, _startPosX + 300, _startPosY + 104);
 		}
-	}
+
+        public override string ToString()
+        {
+            return $"{MaxSpeed}{separator}{Weight}{separator}{MainColor.Name}";
+        }
+
+    }
 }
 

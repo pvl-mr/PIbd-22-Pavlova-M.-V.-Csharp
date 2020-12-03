@@ -8,7 +8,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsBoat
 {
-	public class Parking<T> where T : class, ITransport
+    /// <summary>
+    /// Параметризованный класс для хранения набора объектов от интерфейса ITransport
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public class Parking<T> where T : class, ITransport
 	{
 		private readonly List<T> places;
 		private readonly int maxCount;
@@ -108,8 +112,15 @@ namespace WindowsFormsBoat
 				g.DrawLine(pen, i * placeSizeWidth, 0, i * placeSizeWidth, (pictureHeight / placeSizeHeight) * placeSizeHeight);
 			}
 		}
-	}
 
-
+        public T GetNext(int index)
+        {
+            if (index < 0 || index >= places.Count)
+            {
+                return null;
+            }
+            return places[index];
+        }
+    }
 
 }
