@@ -6,6 +6,8 @@ using System.Windows.Forms;
 
 namespace WindowsFormsBoat
 {
+	public delegate void BoatDelegate(SwimmingTransport boat);
+
 	static class Program
 	{
 		/// <summary>

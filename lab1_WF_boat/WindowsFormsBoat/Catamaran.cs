@@ -22,13 +22,14 @@ namespace WindowsFormsBoat
 
 
         public Catamaran(int maxSpeed, float weight, Color mainColor, Color dopColor,
-        bool sideSpoiler, bool sportLine) : base(maxSpeed, weight, mainColor)
+        bool righrSideFloat, bool leftSideFloat) : base(maxSpeed, weight, mainColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
             MainColor = mainColor;
             DopColor = dopColor;
-            SideFloat = sideSpoiler;
+            RighrSideFloat = righrSideFloat;
+            LeftSideFloat = leftSideFloat;
         }
 
         public override void DrawTransport(Graphics g)
@@ -58,6 +59,16 @@ namespace WindowsFormsBoat
             base.DrawTransport(g);
 
         }
+
+        /// <summary>
+        /// Смена дополнительного цвета
+        /// </summary>
+        /// <param name="color"></param>
+        public void SetDopColor(Color color)
+        {
+            DopColor = color;
+        }
+
 
     }
 }

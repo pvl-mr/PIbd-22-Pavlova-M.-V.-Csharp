@@ -52,44 +52,22 @@ namespace WindowsFormsBoat
 
 		private void bParkBoat_Click(object sender, EventArgs e)
 		{
-			if (listBoxParkings.SelectedIndex > -1)
-			{
-				ColorDialog dialog = new ColorDialog();
-				if (dialog.ShowDialog() == DialogResult.OK)
-				{
-					var boat = new Boat(100, 1000, dialog.Color);
-					if (parkingCollection[listBoxParkings.SelectedItem.ToString()] + boat)
-					{
-						Draw();
-					}
-					else
-					{
-						MessageBox.Show("Парковка переполнена");
-					}
-				}
-			}
+			var formCarConfig = new FormBoatConfig();
+			formCarConfig.AddEvent(AddBoat);
+			formCarConfig.Show();
 		}
 
-		private void bParkCatamaran_Click(object sender, EventArgs e)
+		private void AddBoat(ITransport boat)
 		{
-			if (listBoxParkings.SelectedIndex > -1)
+			if (boat != null && listBoxParkings.SelectedIndex > -1)
 			{
-				ColorDialog dialog = new ColorDialog();
-				if (dialog.ShowDialog() == DialogResult.OK)
+				if ((parkingCollection[listBoxParkings.SelectedItem.ToString()]) + boat)
 				{
-				ColorDialog dialogDop = new ColorDialog();
-					if (dialogDop.ShowDialog() == DialogResult.OK)
-					{
-						var car = new Catamaran(100, 1000, dialog.Color, dialogDop.Color, true, true);
-						if (parkingCollection[listBoxParkings.SelectedItem.ToString()] + car)
-						{
-							Draw();
-						}
-						else
-						{
-							MessageBox.Show("Парковка переполнена");
-						}
-					}
+					Draw();
+				}
+				else
+				{
+					MessageBox.Show("Лодку поставить не удалось");
 				}
 			}
 		}
@@ -108,6 +86,12 @@ namespace WindowsFormsBoat
 				Draw();
 			}
 		}
+
+		private void FormParking_Load(object sender, EventArgs e)
+		{
+
+		}
+
 		
 
 		private void buttonDelParking_Click_Click(object sender, EventArgs e)
@@ -126,12 +110,13 @@ namespace WindowsFormsBoat
 
 		private void buttonAddParking_Click_Click(object sender, EventArgs e)
 		{
+
 			if (string.IsNullOrEmpty(textBoxNewLevelName.Text))
 			{
 				MessageBox.Show("Введите название парковки", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
-			parkingCollection.AddParking(textBoxNewLevelName.Text);
+parkingCollection.AddParking(textBoxNewLevelName.Text);
 			ReloadLevels();
 		}
 
