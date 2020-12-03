@@ -11,7 +11,8 @@ namespace WindowsFormsBoat
 		/// <summary>
 		/// Словарь (хранилище) с парковками
 		/// </summary>
-		readonly Dictionary<string, Parking<SwimmingTransport>> parkingStages;
+		readonly Dictionary<string, Parking<ITransport>> parkingStages;
+
 		/// <summary>
 		/// Возвращение списка названий праковок
 		/// </summary>
@@ -31,7 +32,7 @@ namespace WindowsFormsBoat
 		/// <param name="pictureHeight"></param>
 		public ParkingCollection(int pictureWidth, int pictureHeight)
 		{
-			parkingStages = new Dictionary<string, Parking<SwimmingTransport>>();
+			parkingStages = new Dictionary<string, Parking<ITransport>>();
 			this.pictureWidth = pictureWidth;
 			this.pictureHeight = pictureHeight;
 		}
@@ -46,7 +47,7 @@ namespace WindowsFormsBoat
 			{
 				return;
 			}
-			parkingStages.Add(name, new Parking<SwimmingTransport>(pictureWidth, pictureHeight));
+			parkingStages.Add(name, new Parking<ITransport>(pictureWidth, pictureHeight));
 
 		}
 
@@ -67,7 +68,8 @@ namespace WindowsFormsBoat
 		/// </summary>
 		/// <param name="ind"></param>
 		/// <returns></returns>
-		public Parking<SwimmingTransport> this[string ind]
+		/// 
+		public Parking<ITransport> this[string ind]
 		{
 			get
 			{

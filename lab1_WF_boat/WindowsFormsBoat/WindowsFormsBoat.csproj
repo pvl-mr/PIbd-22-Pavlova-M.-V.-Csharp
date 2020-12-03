@@ -55,6 +55,12 @@
     <Compile Include="FormBoat.Designer.cs">
       <DependentUpon>FormBoat.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBoatConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBoatConfig.Designer.cs">
+      <DependentUpon>FormBoatConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormParking.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     <Compile Include="SwimmingTransport.cs" />
     <EmbeddedResource Include="FormBoat.resx">
       <DependentUpon>FormBoat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBoatConfig.resx">
+      <DependentUpon>FormBoatConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormParking.resx">
       <DependentUpon>FormParking.cs</DependentUpon>

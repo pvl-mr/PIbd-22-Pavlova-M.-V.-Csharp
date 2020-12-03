@@ -29,8 +29,6 @@
 		private void InitializeComponent()
 		{
 			this.boxParking = new System.Windows.Forms.PictureBox();
-			this.bParkBoat = new System.Windows.Forms.Button();
-			this.bParkCatamaran = new System.Windows.Forms.Button();
 			this.groupBox_taking = new System.Windows.Forms.GroupBox();
 			this.bTake = new System.Windows.Forms.Button();
 			this.maskedTextBox_placing = new System.Windows.Forms.MaskedTextBox();
@@ -40,11 +38,12 @@
 			this.listBoxParkings = new System.Windows.Forms.ListBox();
 			this.buttonDelParking_Click = new System.Windows.Forms.Button();
 			this.textBoxNewLevelName = new System.Windows.Forms.TextBox();
+			this.bParkBoat = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.boxParking)).BeginInit();
 			this.groupBox_taking.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// boxParking
+			// boxParkimg
 			// 
 			this.boxParking.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.boxParking.Location = new System.Drawing.Point(0, 0);
@@ -53,29 +52,7 @@
 			this.boxParking.TabIndex = 0;
 			this.boxParking.TabStop = false;
 			// 
-			// bParkBoat
-			// 
-			this.bParkBoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.bParkBoat.Location = new System.Drawing.Point(956, 359);
-			this.bParkBoat.Name = "bParkBoat";
-			this.bParkBoat.Size = new System.Drawing.Size(159, 54);
-			this.bParkBoat.TabIndex = 1;
-			this.bParkBoat.Text = "Park the boat";
-			this.bParkBoat.UseVisualStyleBackColor = true;
-			this.bParkBoat.Click += new System.EventHandler(this.bParkBoat_Click);
-			// 
-			// bParkCatamaran
-			// 
-			this.bParkCatamaran.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.bParkCatamaran.Location = new System.Drawing.Point(959, 438);
-			this.bParkCatamaran.Name = "bParkCatamaran";
-			this.bParkCatamaran.Size = new System.Drawing.Size(156, 59);
-			this.bParkCatamaran.TabIndex = 2;
-			this.bParkCatamaran.Text = "Park the catamaran";
-			this.bParkCatamaran.UseVisualStyleBackColor = true;
-			this.bParkCatamaran.Click += new System.EventHandler(this.bParkCatamaran_Click);
-			// 
-			// groupBox_taking
+			// groupBox1
 			// 
 			this.groupBox_taking.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.groupBox_taking.Controls.Add(this.bTake);
@@ -98,7 +75,7 @@
 			this.bTake.UseVisualStyleBackColor = true;
 			this.bTake.Click += new System.EventHandler(this.bTake_Click);
 			// 
-			// maskedTextBox_placing
+			// maskedTextBox1
 			// 
 			this.maskedTextBox_placing.Location = new System.Drawing.Point(51, 28);
 			this.maskedTextBox_placing.Mask = "0";
@@ -106,7 +83,7 @@
 			this.maskedTextBox_placing.Size = new System.Drawing.Size(63, 20);
 			this.maskedTextBox_placing.TabIndex = 1;
 			// 
-			// label_place
+			// label1
 			// 
 			this.label_place.AutoSize = true;
 			this.label_place.Location = new System.Drawing.Point(5, 31);
@@ -115,7 +92,7 @@
 			this.label_place.TabIndex = 0;
 			this.label_place.Text = "Place: ";
 			// 
-			// label_parking
+			// label2
 			// 
 			this.label_parking.AutoSize = true;
 			this.label_parking.Location = new System.Drawing.Point(1000, 22);
@@ -161,6 +138,17 @@
 			this.textBoxNewLevelName.Size = new System.Drawing.Size(154, 20);
 			this.textBoxNewLevelName.TabIndex = 9;
 			// 
+			// bParkBoat
+			// 
+			this.bParkBoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.bParkBoat.Location = new System.Drawing.Point(956, 359);
+			this.bParkBoat.Name = "bParkBoat";
+			this.bParkBoat.Size = new System.Drawing.Size(159, 54);
+			this.bParkBoat.TabIndex = 1;
+			this.bParkBoat.Text = "Park the boat";
+			this.bParkBoat.UseVisualStyleBackColor = true;
+			this.bParkBoat.Click += new System.EventHandler(this.bParkBoat_Click);
+			// 
 			// FormParking
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,11 +160,11 @@
 			this.Controls.Add(this.buttonAddParking_Click);
 			this.Controls.Add(this.label_parking);
 			this.Controls.Add(this.groupBox_taking);
-			this.Controls.Add(this.bParkCatamaran);
 			this.Controls.Add(this.bParkBoat);
 			this.Controls.Add(this.boxParking);
 			this.Name = "FormParking";
 			this.Text = "FormParking";
+			this.Load += new System.EventHandler(this.FormParking_Load);
 			((System.ComponentModel.ISupportInitialize)(this.boxParking)).EndInit();
 			this.groupBox_taking.ResumeLayout(false);
 			this.groupBox_taking.PerformLayout();
@@ -188,8 +176,6 @@
 		#endregion
 
 		private System.Windows.Forms.PictureBox boxParking;
-		private System.Windows.Forms.Button bParkBoat;
-		private System.Windows.Forms.Button bParkCatamaran;
 		private System.Windows.Forms.GroupBox groupBox_taking;
 		private System.Windows.Forms.Button bTake;
 		private System.Windows.Forms.MaskedTextBox maskedTextBox_placing;
@@ -199,5 +185,6 @@
 		private System.Windows.Forms.ListBox listBoxParkings;
 		private System.Windows.Forms.Button buttonDelParking_Click;
 		private System.Windows.Forms.TextBox textBoxNewLevelName;
+		private System.Windows.Forms.Button bParkBoat;
 	}
 }
