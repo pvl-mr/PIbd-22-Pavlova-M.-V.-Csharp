@@ -69,10 +69,6 @@ namespace WindowsFormsBoat
 		/// <param name="ind"></param>
 		/// <returns></returns>
 		/// 
-
-		
-
-
 		public Parking<ITransport> this[string ind]
 		{
 			get
