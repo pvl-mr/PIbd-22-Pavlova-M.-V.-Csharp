@@ -11,15 +11,12 @@ namespace WindowsFormsBoat
 	{
         
         public Color DopColor { private set; get; }
-        /// Признак наличия боковых поплавков
-        /// 
+      
         public bool SideFloat { private set; get; }
-        /// <summary>
-        /// 
+ 
         public bool LeftSideFloat { private set; get; }
 
         public bool RighrSideFloat { private set; get; }
-
 
         public Catamaran(int maxSpeed, float weight, Color mainColor, Color dopColor,
         bool righrSideFloat, bool leftSideFloat) : base(maxSpeed, weight, mainColor)
@@ -57,7 +54,6 @@ namespace WindowsFormsBoat
 
             // основная часть плавательного средства
             base.DrawTransport(g);
-
         }
 
         /// <summary>
@@ -68,7 +64,6 @@ namespace WindowsFormsBoat
         {
             DopColor = color;
         }
-
 
     }
 }
