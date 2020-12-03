@@ -169,6 +169,8 @@ namespace WindowsFormsBoat
 				eventAddBoat += ev;
 			}
 		}
+
+       
+    }
 	
-	}	
 }
