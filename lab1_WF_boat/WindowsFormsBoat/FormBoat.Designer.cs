@@ -39,10 +39,10 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxBoat)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// buttonCreate
+			// buttonCreateBoat
 			// 
 			this.buttonCreateBoat.Location = new System.Drawing.Point(904, 12);
-			this.buttonCreateBoat.Name = "buttonCreate";
+			this.buttonCreateBoat.Name = "buttonCreateBoat";
 			this.buttonCreateBoat.Size = new System.Drawing.Size(215, 91);
 			this.buttonCreateBoat.TabIndex = 5;
 			this.buttonCreateBoat.Text = "Create boat";
@@ -109,9 +109,9 @@
 			// buttonCreateCatamaran
 			// 
 			this.buttonCreateCatamaran.Location = new System.Drawing.Point(904, 119);
-			this.buttonCreateCatamaran.Name = "button1";
+			this.buttonCreateCatamaran.Name = "buttonCreateCatamaran";
 			this.buttonCreateCatamaran.Size = new System.Drawing.Size(214, 103);
-			this.bubuttonCreateCatamarantton1.TabIndex = 10;
+			this.buttonCreateCatamaran.TabIndex = 10;
 			this.buttonCreateCatamaran.Text = "Create catamaran";
 			this.buttonCreateCatamaran.UseVisualStyleBackColor = true;
 			this.buttonCreateCatamaran.Click += new System.EventHandler(this.buttonCreateCatamaran_Click);
@@ -121,12 +121,12 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1134, 681);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.buttonCreateCatamaran);
 			this.Controls.Add(this.buttonUp);
 			this.Controls.Add(this.buttonRight);
 			this.Controls.Add(this.buttonDown);
 			this.Controls.Add(this.buttonLeft);
-			this.Controls.Add(this.buttonCreate);
+			this.Controls.Add(this.buttonCreateBoat);
 			this.Controls.Add(this.pictureBoxBoat);
 			this.Name = "FormBoat";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
