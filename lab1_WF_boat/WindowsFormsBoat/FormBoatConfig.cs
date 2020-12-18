@@ -57,7 +57,6 @@ namespace WindowsFormsBoat
 		{
 			labelBoat.DoDragDrop(labelBoat.Text, DragDropEffects.Move | DragDropEffects.Copy);
 		}
-
 		/// <summary>
 		/// Передаем информацию при нажатии на Label
 		/// </summary>
@@ -170,7 +169,6 @@ namespace WindowsFormsBoat
 			}
 		}
 
-       
     }
 	
 }
