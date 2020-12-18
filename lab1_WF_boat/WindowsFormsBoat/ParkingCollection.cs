@@ -13,7 +13,6 @@ namespace WindowsFormsBoat
 		/// Словарь (хранилище) с парковками
 		/// </summary>
 		readonly Dictionary<string, Parking<ITransport>> parkingStages;
-
 		/// <summary>
 		/// Возвращение списка названий праковок
 		/// </summary>
@@ -31,7 +30,6 @@ namespace WindowsFormsBoat
         /// Разделитель для записи информации в файл
         /// </summary>
         private readonly char separator = ':';
-
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -55,7 +53,6 @@ namespace WindowsFormsBoat
 				return;
 			}
 			parkingStages.Add(name, new Parking<ITransport>(pictureWidth, pictureHeight));
-
 		}
 
 		/// <summary>
@@ -94,7 +91,7 @@ namespace WindowsFormsBoat
         /// </summary>
         /// <param name="filename">Путь и имя файла</param>
         /// <returns></returns>
-        public bool SaveData(string filename)
+        public void SaveData(string filename)
         {
             if (File.Exists(filename))
             {
@@ -128,7 +125,6 @@ namespace WindowsFormsBoat
                     }
                 }
             }
-            return true;
         }
 
         /// <summary>
@@ -136,11 +132,11 @@ namespace WindowsFormsBoat
         /// </summary>
         /// <param name="filename"></param>
         /// <returns></returns>
-        public bool LoadData(string filename)
+        public void LoadData(string filename)
         {
             if (!File.Exists(filename))
             {
-                return false;
+                throw new FileNotFoundException();
             }
             using (StreamReader sr = new StreamReader(filename, Encoding.UTF8))
             {
@@ -154,7 +150,7 @@ namespace WindowsFormsBoat
                 else
                 {
                     //если нет такой записи, то это не те данные
-                    return false;
+                    throw new FormatException("Неверный формат файла");
                 }
                 while((line = sr.ReadLine()) != null)
                 {
@@ -183,12 +179,10 @@ namespace WindowsFormsBoat
                     var result = parkingStages[key] + boat;
                     if (!result)
                     {
-                        return false;
+                        throw new ParkingOverflowException("Не удалось загрузить автомобиль на парковку");
                     }
                 }
             }
-            return true;
         }
     }
-
 }

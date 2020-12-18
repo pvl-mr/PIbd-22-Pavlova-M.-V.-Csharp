@@ -40,12 +40,10 @@ namespace WindowsFormsBoat
 		{
 			Random rnd = new Random();
 			boat = new Boat(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Aqua);
-			boat.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxBoat.Width,
+			boat.SetPosition(rnd.Next(10, 50), rnd.Next(10, 50), pictureBoxBoat.Width,
 pictureBoxBoat.Height);
 			Draw();
 		}
-
-		
 
 		private void buttonMove_Click(object sender, EventArgs e)
 		{
@@ -73,7 +71,7 @@ pictureBoxBoat.Height);
 		{
 			Random rnd = new Random();
 			boat = new Catamaran(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Aqua, Color.Gray, true, true);
-			boat.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxBoat.Width,
+			boat.SetPosition(rnd.Next(10, 50), rnd.Next(10, 50), pictureBoxBoat.Width,
 pictureBoxBoat.Height);
 			Draw();
 		}

@@ -43,7 +43,6 @@ namespace WindowsFormsBoat
         /// <param name="mainColor">Основной цвет плавательного средства</param>
         /// <param name="carWidth">Ширина отрисовки лодки</param>
         /// <param name="carHeight">Высота отрисовки лодки</param>
-        /// 
         public Boat(string info)
         {
             string[] strs = info.Split(separator);

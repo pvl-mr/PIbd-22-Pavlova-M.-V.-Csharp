@@ -58,8 +58,8 @@ namespace WindowsFormsBoat
 		{
 			if (p.places.Count >= p.maxCount)
 			{
-				return false;
-			}
+                throw new ParkingOverflowException("Переполнено");
+            }
 			p.places.Add(boat);
 			return true;
 			
@@ -75,11 +75,11 @@ namespace WindowsFormsBoat
 		{
 			if (index < -1 || index > p.places.Count)
 			{
-				return null;
-			}
-			T car = p.places[index];
+                throw new ParkingNotFoundException(index);
+            }
+			T boat = p.places[index];
 			p.places.RemoveAt(index);
-			return car;
+			return boat;
 		}
 		/// <summary>
 		/// Метод отрисовки парковки
@@ -87,11 +87,10 @@ namespace WindowsFormsBoat
 		/// <param name="g"></param>
 		public void Draw(Graphics g)
 		{
-
 			DrawMarking(g);
 			for (int i = 0; i < places.Count; ++i)
 			{
-				places[i].SetPosition(5 + i / 5 * placeSizeWidth + 5, i % 5 * placeSizeHeight + 15, pictureWidth, pictureHeight);
+				places[i].SetPosition(5 + i / 3 * placeSizeWidth + 5, i % 3 * placeSizeHeight + 15, pictureWidth, pictureHeight);
 				places[i].DrawTransport(g);
 			}
 		}
@@ -105,7 +104,7 @@ namespace WindowsFormsBoat
 			for (int i = 0; i < pictureWidth / placeSizeWidth; i++)
 				
 		{
-				for (int j = 0; j < pictureHeight / placeSizeHeight + 1; ++j)
+				for (int j = 0; j < pictureHeight / placeSizeHeight+1; ++j)
 				{//линия рамзетки места
 					g.DrawLine(pen, i * placeSizeWidth, j * placeSizeHeight, i * placeSizeWidth + placeSizeWidth / 2, j * placeSizeHeight);
 				}
@@ -121,6 +120,7 @@ namespace WindowsFormsBoat
             }
             return places[index];
         }
+
     }
 
 }
