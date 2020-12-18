@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsCars;
 
 namespace WindowsFormsBoat
 {
@@ -65,7 +66,7 @@ namespace WindowsFormsBoat
 			formCarConfig.Show();
 		}
 
-		private void AddBoat(ITransport boat)
+		private void AddBoat(SwimmingTransport boat)
 		{
 			if (boat != null && listBoxParkings.SelectedIndex > -1)
 			{
@@ -87,6 +88,10 @@ namespace WindowsFormsBoat
                 {
                     logger.Warn(ex.Message);
                     MessageBox.Show(ex.Message, "Переполнение", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (ParkingAlreadyHaveException ex)
+                {
+                    MessageBox.Show(ex.Message, "Дублирование", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception ex)
                 {
@@ -211,6 +216,16 @@ namespace WindowsFormsBoat
                     logger.Warn(ex.Message);
                     MessageBox.Show(ex.Message, "Неизвестная ошибка при сохранении", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void buttonSort_Click_Click(object sender, EventArgs e)
+        {
+            if (listBoxParkings.SelectedIndex > -1)
+            {
+                parkingCollection[listBoxParkings.SelectedItem.ToString()].Sort();
+                Draw();
+                logger.Info("Сортировка уровней");
             }
         }
     }

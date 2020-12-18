@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsCars;
 
 namespace WindowsFormsBoat
 {
@@ -12,9 +14,16 @@ namespace WindowsFormsBoat
     /// Параметризованный класс для хранения набора объектов от интерфейса ITransport
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class Parking<T> where T : class, ITransport
+    public class Parking<T> : IEnumerator<T>, IEnumerable<T>
+		where T : class, ITransport
 	{
+		/// <summary>
+		/// Список объектов, которые храним
+		/// </summary>
 		private readonly List<T> places;
+		/// <summary>
+		/// Максимальное количество мест на парковке
+		/// </summary>
 		private readonly int maxCount;
 		/// <summary>
 		/// Ширина окна отрисовки
@@ -32,6 +41,14 @@ namespace WindowsFormsBoat
 		/// Размер парковочного места (высота)
 		/// </summary>
 		private const int placeSizeHeight = 170;
+
+		/// <summary>
+		/// Текущий элемент для вывода через IEnumerator (будет обращаться по своему индексу к ключу словаря, по которму будет возвращаться запись)
+		/// </summary>
+		private int _currentIndex;
+		public T Current => places[_currentIndex];
+		object IEnumerator.Current => places[_currentIndex];
+
 		/// <summary>
 		/// Конструктор
 		/// </summary>
@@ -60,9 +77,13 @@ namespace WindowsFormsBoat
 			{
                 throw new ParkingOverflowException("Переполнено");
             }
+
+			if (p.places.Contains(boat))
+			{
+				throw new ParkingAlreadyHaveException();
+			}
 			p.places.Add(boat);
-			return true;
-			
+			return true;			
 		}
 		/// <summary>
 		/// Перегрузка оператора вычитания
@@ -111,7 +132,6 @@ namespace WindowsFormsBoat
 				g.DrawLine(pen, i * placeSizeWidth, 0, i * placeSizeWidth, (pictureHeight / placeSizeHeight) * placeSizeHeight);
 			}
 		}
-
         public T GetNext(int index)
         {
             if (index < 0 || index >= places.Count)
@@ -121,6 +141,51 @@ namespace WindowsFormsBoat
             return places[index];
         }
 
-    }
+		/// <summary>
+		/// Сортировка автомобилей на парковке
+		/// </summary>
+		public void Sort() => places.Sort((IComparer<T>)new BoatComparer());
+
+		/// <summary>
+		/// Метод интерфейса IEnumerator, вызываемый при удалении объекта
+		/// </summary>
+		public void Dispose()
+		{
+		}
+		/// <summary>
+		/// Метод интерфейса IEnumerator для перехода к следующему элементу или началу коллекции
+		/// </summary>
+		/// <returns></returns>
+		public bool MoveNext()
+		{
+			if (_currentIndex + 1 == places.Count)
+			{			
+				return false;
+			}
+			_currentIndex++;
+			return true;
+		}
+		/// <summary>
+		/// Метод интерфейса IEnumerator для сброса и возврата к началу коллекции
+		/// </summary>
+		public void Reset()
+		{
+			_currentIndex = -1;
+		}
+		/// <summary>
+		/// Метод интерфейса IEnumerable
+		/// </summary>
+		public IEnumerator<T> GetEnumerator()
+		{
+			return this;
+		}
+		/// <summary>
+		/// Метод интерфейса IEnumerable
+		/// </summary>
+		IEnumerator IEnumerable.GetEnumerator()
+		{
+			return this;
+		}
+	}
 
 }

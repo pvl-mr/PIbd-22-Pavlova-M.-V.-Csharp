@@ -13,23 +13,22 @@ namespace WindowsFormsBoat
 	public partial class FormBoatConfig : Form
 	{
 
-		ITransport boat = null;
-
-		private event Action<ITransport> eventAddBoat;
+		SwimmingTransport boat = null;
+		private event Action<SwimmingTransport> eventAddBoat;
 
 		public FormBoatConfig()
 		{
 			InitializeComponent();
 			// привязать panelColor_MouseDown к панелям с цветами
 			buttonCancel.Click += (object sender, EventArgs e) => { Close(); };
-			panelColor1.MouseDown += panelColor_MouseDown;
-			panelColor2.MouseDown += panelColor_MouseDown;
-			panelColor3.MouseDown += panelColor_MouseDown;
-			panelColor4.MouseDown += panelColor_MouseDown;
-			panelColor5.MouseDown += panelColor_MouseDown;
-			panelColor6.MouseDown += panelColor_MouseDown;
-			panelColor7.MouseDown += panelColor_MouseDown;
-			panelColor8.MouseDown += panelColor_MouseDown;
+			panelBrown.MouseDown += panelColor_MouseDown;
+			panelCoral.MouseDown += panelColor_MouseDown;
+			panelPink.MouseDown += panelColor_MouseDown;
+			panelRed.MouseDown += panelColor_MouseDown;
+			panelLightPink.MouseDown += panelColor_MouseDown;
+			panelViolet.MouseDown += panelColor_MouseDown;
+			panelBlue.MouseDown += panelColor_MouseDown;
+			panelGreen.MouseDown += panelColor_MouseDown;
 			buttonAdd.Click += (object sender, EventArgs e) => { eventAddBoat.Invoke(boat); Close(); };
 		}
 
@@ -151,13 +150,11 @@ namespace WindowsFormsBoat
 			}
 		}
 
-
-
 		/// <summary>
 		/// Добавление события
 		/// </summary>
 		/// <param name="ev"></param>
-		public void AddEvent(Action<ITransport> ev)
+		public void AddEvent(Action<SwimmingTransport> ev)
 		{
 			if (eventAddBoat == null)
 			{
@@ -167,8 +164,6 @@ namespace WindowsFormsBoat
 			{
 				eventAddBoat += ev;
 			}
-		}
-
-    }
-	
+		}       
+    }	
 }
