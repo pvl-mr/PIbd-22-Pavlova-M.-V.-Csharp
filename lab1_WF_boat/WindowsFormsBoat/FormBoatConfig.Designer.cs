@@ -45,14 +45,14 @@
             this.groupBoxColors = new System.Windows.Forms.GroupBox();
             this.labelDopColor = new System.Windows.Forms.Label();
             this.labelMainColor = new System.Windows.Forms.Label();
-            this.panelColor6 = new System.Windows.Forms.Panel();
-            this.panelColor8 = new System.Windows.Forms.Panel();
-            this.panelColor5 = new System.Windows.Forms.Panel();
-            this.panelColor7 = new System.Windows.Forms.Panel();
-            this.panelColor4 = new System.Windows.Forms.Panel();
-            this.panelColor3 = new System.Windows.Forms.Panel();
-            this.panelColor2 = new System.Windows.Forms.Panel();
-            this.panelColor1 = new System.Windows.Forms.Panel();
+            this.panelViolet = new System.Windows.Forms.Panel();
+            this.panelGreen = new System.Windows.Forms.Panel();
+            this.panelLightPink = new System.Windows.Forms.Panel();
+            this.panelBlue = new System.Windows.Forms.Panel();
+            this.panelRed = new System.Windows.Forms.Panel();
+            this.panelPink = new System.Windows.Forms.Panel();
+            this.panelCoral = new System.Windows.Forms.Panel();
+            this.panelBrown = new System.Windows.Forms.Panel();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.groupBoxParameters.SuspendLayout();
@@ -228,14 +228,14 @@
             // 
             this.groupBoxColors.Controls.Add(this.labelDopColor);
             this.groupBoxColors.Controls.Add(this.labelMainColor);
-            this.groupBoxColors.Controls.Add(this.panelColor6);
-            this.groupBoxColors.Controls.Add(this.panelColor8);
-            this.groupBoxColors.Controls.Add(this.panelColor5);
-            this.groupBoxColors.Controls.Add(this.panelColor7);
-            this.groupBoxColors.Controls.Add(this.panelColor4);
-            this.groupBoxColors.Controls.Add(this.panelColor3);
-            this.groupBoxColors.Controls.Add(this.panelColor2);
-            this.groupBoxColors.Controls.Add(this.panelColor1);
+            this.groupBoxColors.Controls.Add(this.panelViolet);
+            this.groupBoxColors.Controls.Add(this.panelGreen);
+            this.groupBoxColors.Controls.Add(this.panelLightPink);
+            this.groupBoxColors.Controls.Add(this.panelBlue);
+            this.groupBoxColors.Controls.Add(this.panelRed);
+            this.groupBoxColors.Controls.Add(this.panelPink);
+            this.groupBoxColors.Controls.Add(this.panelCoral);
+            this.groupBoxColors.Controls.Add(this.panelBrown);
             this.groupBoxColors.Location = new System.Drawing.Point(691, 48);
             this.groupBoxColors.Name = "groupBoxColors";
             this.groupBoxColors.Size = new System.Drawing.Size(223, 176);
@@ -269,78 +269,78 @@
             this.labelMainColor.DragDrop += new System.Windows.Forms.DragEventHandler(this.labelBaseColor_DragDrop);
             this.labelMainColor.DragEnter += new System.Windows.Forms.DragEventHandler(this.labelColor_DragEnter);
             // 
-            // panelColor6
+            // panelViolet
             // 
-            this.panelColor6.BackColor = System.Drawing.Color.MediumPurple;
-            this.panelColor6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelColor6.Location = new System.Drawing.Point(68, 124);
-            this.panelColor6.Name = "panelColor6";
-            this.panelColor6.Size = new System.Drawing.Size(33, 31);
-            this.panelColor6.TabIndex = 3;
+            this.panelViolet.BackColor = System.Drawing.Color.MediumPurple;
+            this.panelViolet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelViolet.Location = new System.Drawing.Point(68, 124);
+            this.panelViolet.Name = "panelViolet";
+            this.panelViolet.Size = new System.Drawing.Size(33, 31);
+            this.panelViolet.TabIndex = 3;
             // 
-            // panelColor8
+            // panelGreen
             // 
-            this.panelColor8.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.panelColor8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelColor8.Location = new System.Drawing.Point(170, 124);
-            this.panelColor8.Name = "panelColor8";
-            this.panelColor8.Size = new System.Drawing.Size(33, 31);
-            this.panelColor8.TabIndex = 5;
+            this.panelGreen.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.panelGreen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelGreen.Location = new System.Drawing.Point(170, 124);
+            this.panelGreen.Name = "panelGreen";
+            this.panelGreen.Size = new System.Drawing.Size(33, 31);
+            this.panelGreen.TabIndex = 5;
             // 
-            // panelColor5
+            // panelLightPink
             // 
-            this.panelColor5.BackColor = System.Drawing.Color.Pink;
-            this.panelColor5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelColor5.Location = new System.Drawing.Point(17, 124);
-            this.panelColor5.Name = "panelColor5";
-            this.panelColor5.Size = new System.Drawing.Size(33, 31);
-            this.panelColor5.TabIndex = 2;
+            this.panelLightPink.BackColor = System.Drawing.Color.Pink;
+            this.panelLightPink.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelLightPink.Location = new System.Drawing.Point(17, 124);
+            this.panelLightPink.Name = "panelLightPink";
+            this.panelLightPink.Size = new System.Drawing.Size(33, 31);
+            this.panelLightPink.TabIndex = 2;
             // 
-            // panelColor7
+            // panelBlue
             // 
-            this.panelColor7.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panelColor7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelColor7.Location = new System.Drawing.Point(119, 124);
-            this.panelColor7.Name = "panelColor7";
-            this.panelColor7.Size = new System.Drawing.Size(33, 31);
-            this.panelColor7.TabIndex = 4;
+            this.panelBlue.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panelBlue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBlue.Location = new System.Drawing.Point(119, 124);
+            this.panelBlue.Name = "panelBlue";
+            this.panelBlue.Size = new System.Drawing.Size(33, 31);
+            this.panelBlue.TabIndex = 4;
             // 
-            // panelColor4
+            // panelRed
             // 
-            this.panelColor4.BackColor = System.Drawing.Color.Red;
-            this.panelColor4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelColor4.Location = new System.Drawing.Point(170, 75);
-            this.panelColor4.Name = "panelColor4";
-            this.panelColor4.Size = new System.Drawing.Size(33, 31);
-            this.panelColor4.TabIndex = 3;
+            this.panelRed.BackColor = System.Drawing.Color.Red;
+            this.panelRed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelRed.Location = new System.Drawing.Point(170, 75);
+            this.panelRed.Name = "panelRed";
+            this.panelRed.Size = new System.Drawing.Size(33, 31);
+            this.panelRed.TabIndex = 3;
             // 
-            // panelColor3
+            // panelPink
             // 
-            this.panelColor3.BackColor = System.Drawing.Color.Salmon;
-            this.panelColor3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelColor3.Location = new System.Drawing.Point(119, 75);
-            this.panelColor3.Name = "panelColor3";
-            this.panelColor3.Size = new System.Drawing.Size(33, 31);
-            this.panelColor3.TabIndex = 2;
+            this.panelPink.BackColor = System.Drawing.Color.Salmon;
+            this.panelPink.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelPink.Location = new System.Drawing.Point(119, 75);
+            this.panelPink.Name = "panelPink";
+            this.panelPink.Size = new System.Drawing.Size(33, 31);
+            this.panelPink.TabIndex = 2;
             // 
-            // panelColor2
+            // panelCoral
             // 
-            this.panelColor2.AllowDrop = true;
-            this.panelColor2.BackColor = System.Drawing.Color.OrangeRed;
-            this.panelColor2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelColor2.Location = new System.Drawing.Point(68, 75);
-            this.panelColor2.Name = "panelColor2";
-            this.panelColor2.Size = new System.Drawing.Size(33, 31);
-            this.panelColor2.TabIndex = 1;
+            this.panelCoral.AllowDrop = true;
+            this.panelCoral.BackColor = System.Drawing.Color.OrangeRed;
+            this.panelCoral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCoral.Location = new System.Drawing.Point(68, 75);
+            this.panelCoral.Name = "panelCoral";
+            this.panelCoral.Size = new System.Drawing.Size(33, 31);
+            this.panelCoral.TabIndex = 1;
             // 
-            // panelColor1
+            // panelBrown
             // 
-            this.panelColor1.BackColor = System.Drawing.Color.SaddleBrown;
-            this.panelColor1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelColor1.Location = new System.Drawing.Point(17, 75);
-            this.panelColor1.Name = "panelColor1";
-            this.panelColor1.Size = new System.Drawing.Size(33, 31);
-            this.panelColor1.TabIndex = 0;
+            this.panelBrown.BackColor = System.Drawing.Color.SaddleBrown;
+            this.panelBrown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBrown.Location = new System.Drawing.Point(17, 75);
+            this.panelBrown.Name = "panelBrown";
+            this.panelBrown.Size = new System.Drawing.Size(33, 31);
+            this.panelBrown.TabIndex = 0;
             // 
             // buttonAdd
             // 
@@ -404,14 +404,14 @@
 		private System.Windows.Forms.GroupBox groupBoxColors;
 		private System.Windows.Forms.Label labelDopColor;
 		private System.Windows.Forms.Label labelMainColor;
-		private System.Windows.Forms.Panel panelColor6;
-		private System.Windows.Forms.Panel panelColor8;
-		private System.Windows.Forms.Panel panelColor5;
-		private System.Windows.Forms.Panel panelColor7;
-		private System.Windows.Forms.Panel panelColor4;
-		private System.Windows.Forms.Panel panelColor3;
-		private System.Windows.Forms.Panel panelColor2;
-		private System.Windows.Forms.Panel panelColor1;
+		private System.Windows.Forms.Panel panelViolet;
+		private System.Windows.Forms.Panel panelGreen;
+		private System.Windows.Forms.Panel panelLightPink;
+		private System.Windows.Forms.Panel panelBlue;
+		private System.Windows.Forms.Panel panelRed;
+		private System.Windows.Forms.Panel panelPink;
+		private System.Windows.Forms.Panel panelCoral;
+		private System.Windows.Forms.Panel panelBrown;
 		private System.Windows.Forms.Button buttonAdd;
 		private System.Windows.Forms.Button buttonCancel;
 	}

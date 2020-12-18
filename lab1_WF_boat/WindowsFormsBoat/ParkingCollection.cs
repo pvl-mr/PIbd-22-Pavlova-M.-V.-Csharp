@@ -12,7 +12,7 @@ namespace WindowsFormsBoat
 		/// <summary>
 		/// Словарь (хранилище) с парковками
 		/// </summary>
-		readonly Dictionary<string, Parking<ITransport>> parkingStages;
+		readonly Dictionary<string, Parking<SwimmingTransport>> parkingStages;
 		/// <summary>
 		/// Возвращение списка названий праковок
 		/// </summary>
@@ -37,7 +37,7 @@ namespace WindowsFormsBoat
         /// <param name="pictureHeight"></param>
         public ParkingCollection(int pictureWidth, int pictureHeight)
 		{
-			parkingStages = new Dictionary<string, Parking<ITransport>>();
+			parkingStages = new Dictionary<string, Parking<SwimmingTransport>>();
 			this.pictureWidth = pictureWidth;
 			this.pictureHeight = pictureHeight;
 		}
@@ -52,7 +52,7 @@ namespace WindowsFormsBoat
 			{
 				return;
 			}
-			parkingStages.Add(name, new Parking<ITransport>(pictureWidth, pictureHeight));
+			parkingStages.Add(name, new Parking<SwimmingTransport>(pictureWidth, pictureHeight));
 		}
 
 		/// <summary>
@@ -73,7 +73,7 @@ namespace WindowsFormsBoat
 		/// <param name="ind"></param>
 		/// <returns></returns>
 		/// 
-		public Parking<ITransport> this[string ind]
+		public Parking<SwimmingTransport> this[string ind]
 		{
 			get
 			{
@@ -104,8 +104,8 @@ namespace WindowsFormsBoat
                 {
                     //Начинаем парковку
                     sw.WriteLine($"Parking{separator}{level.Key}");
-                    ITransport boat = null;
-                    for (int i = 0; (boat = level.Value.GetNext(i)) != null; i++)
+                   
+                    foreach (ITransport boat in level.Value)
                     {
                         if (boat != null)
                         {
@@ -161,7 +161,7 @@ namespace WindowsFormsBoat
                     {
                         //начинаем новую парковку
                         key = line.Split(separator)[1];
-                        parkingStages.Add(key, new Parking<ITransport>(pictureWidth, pictureHeight));
+                        parkingStages.Add(key, new Parking<SwimmingTransport>(pictureWidth, pictureHeight));
                         continue;
                     }
                     if (string.IsNullOrEmpty(line))

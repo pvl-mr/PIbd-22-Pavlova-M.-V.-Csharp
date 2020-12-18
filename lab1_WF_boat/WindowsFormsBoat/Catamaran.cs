@@ -1,14 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace WindowsFormsBoat
 {
-	public class Catamaran : Boat
-	{  
+	public class Catamaran : Boat, IEquatable<Catamaran>
+    {  
         public Color DopColor { private set; get; }
-        
+
         public bool SideFloat { private set; get; }
-        
+ 
         public bool LeftSideFloat { private set; get; }
 
         public bool RighrSideFloat { private set; get; }
@@ -45,17 +49,20 @@ namespace WindowsFormsBoat
         public override void DrawTransport(Graphics g)
         {
             Pen pen = new Pen(Color.Black);                   
+
             if (SideFloat)
             {
                 Brush spoiler = new SolidBrush(DopColor);
                 g.FillRectangle(spoiler, _startPosX, _startPosY-2, 400, 20);
                 g.FillRectangle(spoiler, _startPosX, _startPosY+122, 400, 20);
             }
+
             if (RighrSideFloat)
             {
                 Brush spoiler = new SolidBrush(DopColor);
                 g.FillRectangle(spoiler, _startPosX, _startPosY - 2, 400, 20);
             }
+
             if (LeftSideFloat)
             {
                 Brush spoiler = new SolidBrush(DopColor);
@@ -78,6 +85,68 @@ namespace WindowsFormsBoat
         public override string ToString()
         {
             return $"{base.ToString()}{separator}{DopColor.Name}{separator}{RighrSideFloat}{separator}{LeftSideFloat}";
+        }
+
+        /// <summary>
+        /// Метод интерфейса IEquatable для класса SportCar
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public bool Equals(Catamaran other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            if (GetType().Name != other.GetType().Name)
+            {
+                return false;
+            }
+            if (MaxSpeed != other.MaxSpeed)
+            {
+                return false;
+            }
+            if (Weight != other.Weight)
+            {
+                return false;
+            }
+            if (MainColor != other.MainColor)
+            {
+                return false;
+            }
+            if (DopColor != other.DopColor)
+            {
+                return false;
+            }
+            if (RighrSideFloat != other.RighrSideFloat)
+            {
+                return false;
+            }
+            if (LeftSideFloat != other.LeftSideFloat)
+            {
+                return false;
+            }
+            return true;
+        }
+        /// <summary>
+        /// Перегрузка метода от object
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+            return false;
+            }
+            if (!(obj is Catamaran boatObj))
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(boatObj);
+            }
         }
 
     }
